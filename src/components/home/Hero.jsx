@@ -1,58 +1,88 @@
-import Button from "../common/Button";
-import HeroStats from "./HeroStats";
+import { motion } from "framer-motion";
+import BackgroundGlow from "./BackgroundGlow";
 import UploadCard from "./UploadCard";
+import HeroStats from "./HeroStats";
+import Button from "../common/Button";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#030712] via-[#111827] to-[#1e3a8a]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="relative overflow-hidden min-h-screen bg-[#030712] text-white">
 
-        {/* Left Section */}
-        <div className="text-center lg:text-left">
+      <BackgroundGlow />
 
-          <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-            🚀 AI Powered Career Guidance
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        {/* LEFT */}
+
+        <motion.div
+          initial={{ opacity: 0, x: -70 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+
+          <span className="inline-block px-4 py-2 rounded-full bg-blue-600/20 border border-blue-500 text-blue-400">
+
+            AI Powered Career Platform
+
           </span>
 
-          <h1 className="mt-8 font-extrabold leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-            From
-            <br />
-            <span className="text-blue-400">Dreaming</span>
-            <br />
-            To Doing.
+          <h1 className="mt-8 text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+
+            Crack Your
+
+            <span className="block text-blue-500">
+
+              Dream Placement
+
+            </span>
+
+            with AI
+
           </h1>
 
-          <p className="mt-8 text-gray-300 text-base sm:text-lg md:text-xl leading-8 max-w-xl mx-auto lg:mx-0">
-            Upload your resume, discover your ideal career,
-            get AI-generated company roadmaps and prepare
-            smartly for your dream placement.
+          <p className="mt-8 text-gray-400 text-lg leading-8">
+
+            Upload your resume.
+
+            Discover your best career.
+
+            Get company-specific roadmaps.
+
+            Practice interviews.
+
+            Chat with AI.
+
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 mt-10">
 
-            <Button
-              text="Upload Resume"
-              className="w-full sm:w-auto"
-            />
+            <Button text="Upload Resume" />
 
             <Button
               text="Explore Roadmaps"
-              className="w-full sm:w-auto bg-gray-700 hover:bg-gray-600"
+              className="bg-gray-800 hover:bg-gray-700"
             />
 
           </div>
 
           <HeroStats />
 
-        </div>
+        </motion.div>
 
-        {/* Right Section */}
+        {/* RIGHT */}
 
-        <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, x: 70 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+
           <UploadCard />
-        </div>
+
+        </motion.div>
 
       </div>
+
     </section>
   );
 }
