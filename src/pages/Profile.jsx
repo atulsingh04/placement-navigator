@@ -1,5 +1,5 @@
 import { Mail, GraduationCap, Briefcase, User } from "lucide-react";
-import Profile from "../pages/Profile";
+// import Profile from "../pages/Profile";
 export default function Profile() {
   const user = {
     name: "Atul Singh",
