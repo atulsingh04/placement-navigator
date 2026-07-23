@@ -7,6 +7,8 @@ import RoadmapPreview from "../components/home/RoadmapPreview";
 import Testimonials from "../components/home/Testimonials";
 import FAQ from "../components/home/FAQ";
 import Footer from "../components/layout/Footer";
+import ChatbotPreview from "../components/home/ChatbotPreview";
+import DashboardPreview from "../components/home/DashboardPreview";
 
 export default function Home() {
   return (
@@ -24,11 +26,16 @@ export default function Home() {
 
       <RoadmapPreview />
 
+      <ChatbotPreview />
+
+      <DashboardPreview />
+
       <Testimonials />
 
       <FAQ />
 
       <Footer />
+
 
     </div>
   );

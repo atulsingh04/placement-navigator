@@ -1,29 +1,48 @@
+import roadmap from "../../data/roadmaps";
+
 export default function RoadmapPreview() {
   return (
-    <section className="py-24">
+    <section id="roadmaps" className="py-24 bg-[#030712] text-white">
+      <div className="max-w-5xl mx-auto px-6">
 
-      <h1 className="text-center text-5xl font-bold">
-        AI Roadmap Preview
-      </h1>
+        <h2 className="text-4xl font-bold text-center">
+          AI Roadmap Preview
+        </h2>
 
-      <div className="max-w-5xl mx-auto mt-16 bg-gray-900 rounded-3xl p-10">
+        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-10 mt-16 border border-white/10">
 
-        <div className="space-y-6">
+          <h3 className="text-3xl font-bold text-blue-500">
+            Google Software Engineer
+          </h3>
 
-          <div>✅ Learn DSA</div>
+          <div className="mt-8 space-y-5">
+            {roadmap.map((item) => (
+              <div
+                key={item.week}
+                className="flex justify-between bg-gray-900 rounded-xl p-5"
+              >
+                <span>{item.week}</span>
 
-          <div>✅ Learn SQL</div>
+                <span>{item.title}</span>
+              </div>
+            ))}
+          </div>
 
-          <div>✅ Build Projects</div>
+          <div className="mt-10">
+            <p className="mb-2">Progress</p>
 
-          <div>✅ Practice Aptitude</div>
+            <div className="bg-gray-800 rounded-full h-4 overflow-hidden">
+              <div className="bg-blue-500 h-4 w-2/5 rounded-full"></div>
+            </div>
 
-          <div>✅ Mock Interviews</div>
+            <p className="mt-2 text-blue-400">
+              40% Completed
+            </p>
+          </div>
 
         </div>
 
       </div>
-
     </section>
   );
 }

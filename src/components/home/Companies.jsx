@@ -1,36 +1,32 @@
 import companies from "../../data/companies";
+import CompanyCard from "./CompanyCard";
 
 export default function Companies() {
-
   return (
+    <section
+      id="companies"
+      className="bg-[#030712] py-24 text-white"
+    >
+      <div className="max-w-7xl mx-auto px-6">
 
-    <section className="py-24">
+        <h2 className="text-center text-4xl font-bold">
+          Trusted Companies
+        </h2>
 
-      <h1 className="text-center text-5xl font-bold">
+        <p className="text-center text-gray-400 mt-3">
+          Prepare for interviews at the world's top companies
+        </p>
 
-        Trusted By
-
-      </h1>
-
-      <div className="max-w-6xl mx-auto mt-16 grid md:grid-cols-4 gap-8">
-
-        {companies.map((company) => (
-
-          <div
-            key={company}
-            className="bg-gray-900 rounded-xl p-8 text-center text-xl hover:bg-blue-600 duration-300"
-          >
-
-            {company}
-
-          </div>
-
-        ))}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+          {companies.map((company) => (
+            <CompanyCard
+              key={company.name}
+              company={company}
+            />
+          ))}
+        </div>
 
       </div>
-
     </section>
-
   );
-
 }
